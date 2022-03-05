@@ -16,3 +16,4 @@ rootProject.name = "Fishery"
 include(":app")
 include(":libraries:network")
 include(":libraries:abstraction")
+include(":database")

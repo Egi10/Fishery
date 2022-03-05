@@ -1,10 +1,12 @@
 import extensions.implementationCoroutines
 import extensions.implementationsHilt
+import extensions.implementationsRoom
 import extensions.implementationsTest
 
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp") version "1.6.10-1.0.2"
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
 }
@@ -40,15 +42,13 @@ android {
 
 dependencies {
 
-    // Test
     implementationsTest()
-    // Retrofit
-    api(Dependencies.Retrofit.retrofit)
-    implementation(Dependencies.Retrofit.moshi)
     // Hilt
     implementationsHilt()
-    // Coroutines
+    // Coroutine
     implementationCoroutines()
+    // Room
+    implementationsRoom()
 }
 
 kapt {

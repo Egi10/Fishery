@@ -64,6 +64,12 @@ dependencies {
     // Test
     androidTestImplementation(Dependencies.Test.junit)
     androidTestImplementation(Dependencies.Test.espressoCore)
+    // Database
+    implementation(project(Module.database))
+    // Network
+    implementation(project(Module.Libraries.network))
+    // Abstractions
+    implementation(project(Module.Libraries.abstraction))
 }
 
 kapt {

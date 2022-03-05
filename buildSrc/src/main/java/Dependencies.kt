@@ -47,6 +47,13 @@ object Dependencies {
         const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.coroutines}"
     }
 
+    object Room {
+        const val runtime = "androidx.room:room-runtime:${Version.room}"
+        const val compiler = "androidx.room:room-compiler:${Version.room}"
+        const val ktx = "androidx.room:room-ktx:${Version.room}"
+        const val test = "androidx.room:room-testing:${Version.room}"
+    }
+
     object Test {
         const val junit = "junit:junit:${Version.Test.junit}"
         const val junitExt = "androidx.test.ext:junit:${Version.Test.junitExt}"

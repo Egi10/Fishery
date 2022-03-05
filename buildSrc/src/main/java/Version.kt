@@ -7,6 +7,7 @@
 object Version {
     const val hilt = "2.41"
     const val coroutines = "1.6.0"
+    const val room = "2.4.1"
 
     object AndroidX {
         const val coreKtx = "1.7.0"
