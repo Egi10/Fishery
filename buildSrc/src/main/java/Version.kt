@@ -5,6 +5,9 @@
  **/
 
 object Version {
+    const val hilt = "2.41"
+    const val coroutines = "1.6.0"
+
     object AndroidX {
         const val coreKtx = "1.7.0"
         const val lifecycleRuntimeKtx = "2.3.1"
@@ -13,6 +16,10 @@ object Version {
 
     object Compose {
         const val compose = "1.1.1"
+    }
+
+    object Retrofit {
+        const val retrofit = "2.9.0"
     }
 
     object Test {

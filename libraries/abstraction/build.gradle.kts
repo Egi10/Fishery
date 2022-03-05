@@ -1,8 +1,9 @@
-import extensions.implementationsCompose
+import extensions.implementationCoroutines
 import extensions.implementationsHilt
+import extensions.implementationsTest
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
@@ -12,16 +13,11 @@ android {
     compileSdk = Config.compileSdk
 
     defaultConfig {
-        applicationId = Config.applicationId
         minSdk = Config.minSdk
         targetSdk = Config.targetSdk
-        versionCode = Config.versionCode
-        versionName = Config.versionName
 
         testInstrumentationRunner = Config.testInstrumentationRunner
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -40,30 +36,16 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Version.Compose.compose
-    }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
 
-    implementation(Dependencies.AndroidX.coreKtx)
-    implementation(Dependencies.AndroidX.lifecycleRuntimeKtx)
-    // Compose
-    implementationsCompose()
+    // Test
+    implementationsTest()
+    // Coroutines
+    implementationCoroutines()
     // Hilt
     implementationsHilt()
-    // Test
-    androidTestImplementation(Dependencies.Test.junit)
-    androidTestImplementation(Dependencies.Test.espressoCore)
 }
 
 kapt {

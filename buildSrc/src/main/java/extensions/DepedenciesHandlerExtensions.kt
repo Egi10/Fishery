@@ -20,6 +20,31 @@ fun DependencyHandler.implementationsCompose() {
     debugImplementation(Dependencies.Compose.uiTooling)
 }
 
+fun DependencyHandler.implementationsHilt() {
+    implementation(Dependencies.Hilt.hilt)
+    kapt(Dependencies.Hilt.compiler)
+
+    // For instrumentation tests
+    androidTestImplementation(Dependencies.Hilt.androidTesting)
+    kaptAndroidTest(Dependencies.Hilt.testsCompiler)
+
+    // For local unit tests
+    testImplementation(Dependencies.Hilt.localAndroidTesting)
+    kaptTest(Dependencies.Hilt.localTestCompiler)
+}
+
+fun DependencyHandler.implementationCoroutines() {
+    implementation(Dependencies.Coroutines.core)
+    implementation(Dependencies.Coroutines.android)
+    testImplementation(Dependencies.Coroutines.test)
+}
+
+fun DependencyHandler.implementationsTest() {
+    implementation(Dependencies.Test.espressoCore)
+    implementation(Dependencies.Test.junit)
+    implementation(Dependencies.Test.junitExt)
+}
+
 fun DependencyHandler.implementation(dependencyNotation: String) {
     add("implementation", dependencyNotation)
 }

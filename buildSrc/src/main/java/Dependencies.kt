@@ -23,6 +23,30 @@ object Dependencies {
         const val uiTooling = "androidx.compose.ui:ui-tooling:${Version.Compose.compose}"
     }
 
+    object Retrofit {
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Version.Retrofit.retrofit}"
+        const val moshi = "com.squareup.retrofit2:converter-moshi:${Version.Retrofit.retrofit}"
+    }
+
+    object Hilt {
+        const val hilt = "com.google.dagger:hilt-android:${Version.hilt}"
+        const val compiler = "com.google.dagger:hilt-compiler:${Version.hilt}"
+
+        // For instrumentation tests
+        const val androidTesting = "com.google.dagger:hilt-android-testing:${Version.hilt}"
+        const val testsCompiler = "com.google.dagger:hilt-compiler:${Version.hilt}"
+
+        // For local unit tests
+        const val localAndroidTesting = "com.google.dagger:hilt-android-testing:${Version.hilt}"
+        const val localTestCompiler = "com.google.dagger:hilt-compiler:${Version.hilt}"
+    }
+
+    object Coroutines {
+        const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutines}"
+        const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutines}"
+        const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.coroutines}"
+    }
+
     object Test {
         const val junit = "junit:junit:${Version.Test.junit}"
         const val junitExt = "androidx.test.ext:junit:${Version.Test.junitExt}"
