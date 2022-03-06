@@ -1,4 +1,4 @@
-package com.buaja.fishery.ui.theme
+package com.buaja.ui_theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

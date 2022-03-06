@@ -1,5 +1,6 @@
 package com.buaja.fishery
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,8 +15,9 @@ import androidx.work.Constraints
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
-import com.buaja.fishery.ui.theme.FisheryTheme
+import com.buaja.home.ui.home.HomeActivity
 import com.buaja.sync.worker.FisheryWorker
+import com.buaja.ui_theme.FisheryTheme
 import java.util.concurrent.TimeUnit
 
 class MainActivity : ComponentActivity() {
@@ -33,6 +35,9 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onResume() {

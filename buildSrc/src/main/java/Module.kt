@@ -12,4 +12,12 @@ object Module {
         const val network = ":libraries:network"
         const val abstraction = ":libraries:abstraction"
     }
+
+    object Commons {
+        const val uiTheme = ":commons:ui-theme"
+    }
+
+    object Feature {
+        const val home = ":features:home"
+    }
 }

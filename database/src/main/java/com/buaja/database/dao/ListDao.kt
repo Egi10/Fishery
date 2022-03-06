@@ -1,7 +1,9 @@
 package com.buaja.database.dao
 
 import androidx.room.Dao
+import androidx.room.Query
 import com.buaja.database.entity.ListEntity
+import kotlinx.coroutines.flow.Flow
 
 
 /**
@@ -12,4 +14,8 @@ import com.buaja.database.entity.ListEntity
 
 @Dao
 interface ListDao : BaseDao<ListEntity> {
+    @Query("""
+        SELECT * FROM list
+    """)
+    fun getAllList(): Flow<List<ListEntity>>
 }

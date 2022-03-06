@@ -7,10 +7,13 @@
 object Dependencies {
     object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:${Version.AndroidX.coreKtx}"
+        const val appCompat = "androidx.appcompat:appcompat:${Version.AndroidX.appCompat}"
+        const val material = "com.google.android.material:material:${Version.AndroidX.material}"
         const val lifecycleRuntimeKtx =
             "androidx.lifecycle:lifecycle-runtime-ktx:${Version.AndroidX.lifecycleRuntimeKtx}"
         const val activityCompose =
             "androidx.activity:activity-compose:${Version.AndroidX.activityCompose}"
+        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.AndroidX.lifecycleRuntimeKtx}"
         const val hiltCompiler = "androidx.hilt:hilt-compiler:${Version.AndroidX.hilt}"
     }
 

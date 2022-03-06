@@ -74,6 +74,10 @@ dependencies {
     implementation(project(Module.Libraries.abstraction))
     // Sync
     implementation(project(Module.sync))
+    // Ui-Theme
+    implementation(project(Module.Commons.uiTheme))
+    // Home
+    implementation(project(Module.Feature.home))
 }
 
 kapt {

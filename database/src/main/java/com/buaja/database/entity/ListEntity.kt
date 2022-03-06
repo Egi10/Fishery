@@ -7,9 +7,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "list")
 data class ListEntity(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    var id: Int = 0,
     @ColumnInfo(name = "area_city")
     val areaCity: String,
     @ColumnInfo(name = "area_province")
@@ -24,6 +21,7 @@ data class ListEntity(
     val tglParsed: String,
     @ColumnInfo(name = "timestamp")
     val timestamp: String,
+    @PrimaryKey
     @ColumnInfo(name = "uuid")
     val uuid: String
 )

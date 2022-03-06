@@ -7,9 +7,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "options_size")
 data class OptionsSizeEntity(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    var id: Int = 0,
+    @PrimaryKey
     @ColumnInfo(name = "size")
     val size: String
 )

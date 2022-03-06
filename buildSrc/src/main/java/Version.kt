@@ -12,9 +12,11 @@ object Version {
 
     object AndroidX {
         const val coreKtx = "1.7.0"
-        const val lifecycleRuntimeKtx = "2.3.1"
+        const val lifecycleRuntimeKtx = "2.4.0"
         const val activityCompose = "1.3.1"
         const val hilt = "1.0.0"
+        const val appCompat = "1.4.1"
+        const val material = "1.5.0"
     }
 
     object Compose {
