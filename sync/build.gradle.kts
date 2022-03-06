@@ -40,15 +40,22 @@ android {
 
 dependencies {
 
-    // Test
     implementationsTest()
-    // Retrofit
-    api(Dependencies.Retrofit.retrofit)
-    api(Dependencies.Retrofit.moshi)
     // Hilt
     implementationsHilt()
-    // Coroutines
+    implementation(Dependencies.Hilt.worker)
+    kapt(Dependencies.AndroidX.hiltCompiler)
+    // Coroutine
     implementationCoroutines()
+    // WorkManager
+    api(Dependencies.WorkManager.runtime)
+    androidTestApi(Dependencies.WorkManager.test)
+    // Network
+    implementation(project(Module.Libraries.network))
+    // Abstraction
+    implementation(project(Module.Libraries.abstraction))
+    // Database
+    implementation(project(Module.database))
 }
 
 kapt {

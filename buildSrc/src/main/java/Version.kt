@@ -8,11 +8,13 @@ object Version {
     const val hilt = "2.41"
     const val coroutines = "1.6.0"
     const val room = "2.4.1"
+    const val workManager = "2.7.1"
 
     object AndroidX {
         const val coreKtx = "1.7.0"
         const val lifecycleRuntimeKtx = "2.3.1"
         const val activityCompose = "1.3.1"
+        const val hilt = "1.0.0"
     }
 
     object Compose {

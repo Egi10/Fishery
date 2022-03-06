@@ -6,6 +6,7 @@
 
 object Module {
     const val database = ":database"
+    const val sync = ":sync"
 
     object Libraries {
         const val network = ":libraries:network"

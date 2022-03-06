@@ -61,6 +61,8 @@ dependencies {
     implementationsCompose()
     // Hilt
     implementationsHilt()
+    implementation(Dependencies.Hilt.worker)
+    kapt(Dependencies.AndroidX.hiltCompiler)
     // Test
     androidTestImplementation(Dependencies.Test.junit)
     androidTestImplementation(Dependencies.Test.espressoCore)
@@ -70,6 +72,8 @@ dependencies {
     implementation(project(Module.Libraries.network))
     // Abstractions
     implementation(project(Module.Libraries.abstraction))
+    // Sync
+    implementation(project(Module.sync))
 }
 
 kapt {

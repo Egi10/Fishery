@@ -11,6 +11,7 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-runtime-ktx:${Version.AndroidX.lifecycleRuntimeKtx}"
         const val activityCompose =
             "androidx.activity:activity-compose:${Version.AndroidX.activityCompose}"
+        const val hiltCompiler = "androidx.hilt:hilt-compiler:${Version.AndroidX.hilt}"
     }
 
     object Compose {
@@ -39,6 +40,9 @@ object Dependencies {
         // For local unit tests
         const val localAndroidTesting = "com.google.dagger:hilt-android-testing:${Version.hilt}"
         const val localTestCompiler = "com.google.dagger:hilt-compiler:${Version.hilt}"
+
+        // Hilt Worker
+        const val worker = "androidx.hilt:hilt-work:${Version.AndroidX.hilt}"
     }
 
     object Coroutines {
@@ -52,6 +56,11 @@ object Dependencies {
         const val compiler = "androidx.room:room-compiler:${Version.room}"
         const val ktx = "androidx.room:room-ktx:${Version.room}"
         const val test = "androidx.room:room-testing:${Version.room}"
+    }
+
+    object WorkManager {
+        const val runtime = "androidx.work:work-runtime-ktx:${Version.workManager}"
+        const val test = "androidx.work:work-testing:${Version.workManager}"
     }
 
     object Test {
