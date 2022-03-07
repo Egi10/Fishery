@@ -163,4 +163,20 @@ class HomeViewModel @Inject constructor(
             )
         }
     }
+
+    fun showSearchDialog() {
+        _uiState.update {
+            it.copy(
+                showSearchDialog = true
+            )
+        }
+    }
+
+    fun hideSearchDialog() {
+        _uiState.update {
+            it.copy(
+                showSearchDialog = false
+            )
+        }
+    }
 }

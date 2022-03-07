@@ -4,6 +4,7 @@
     <string name="sort">Urutkan</string>
     <string name="filter">Filter</string>
     <string name="add">Tambah</string>
+    <string name="search_commudity">Cari komunidatas</string>
 
     <string-array name="sort_list">
         <item>Default</item>

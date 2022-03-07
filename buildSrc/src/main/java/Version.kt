@@ -17,6 +17,7 @@ object Version {
         const val hilt = "1.0.0"
         const val appCompat = "1.4.1"
         const val material = "1.5.0"
+        const val viewModelCompose = "2.4.1"
     }
 
     object Compose {

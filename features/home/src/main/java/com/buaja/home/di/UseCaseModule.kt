@@ -2,6 +2,8 @@ package com.buaja.home.di
 
 import com.buaja.home.domain.use_case.get_list.GetListPriceUseCase
 import com.buaja.home.domain.use_case.get_list.GetListPriceUseCaseImpl
+import com.buaja.home.domain.use_case.get_list_commodity.GetListCommodityUseCase
+import com.buaja.home.domain.use_case.get_list_commodity.GetListCommodityUseCaseImpl
 import com.buaja.home.domain.use_case.get_list_highest_price.GetListHighestPriceUseCase
 import com.buaja.home.domain.use_case.get_list_highest_price.GetListHighestPriceUseCaseImpl
 import com.buaja.home.domain.use_case.get_list_highest_size.GetListHighestSizeUseCase
@@ -55,4 +57,10 @@ abstract class UseCaseModule {
     abstract fun bindGetListLowestSize(
         getListLowesSizeUseCaseImpl: GetListLowesSizeUseCaseImpl
     ): GetListLowestSizeUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindGetListCommodityUseCase(
+        getListCommodityUseCaseImpl: GetListCommodityUseCaseImpl
+    ): GetListCommodityUseCase
 }

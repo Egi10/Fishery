@@ -48,4 +48,11 @@ interface ListDao : BaseDao<ListEntity> {
         """
     )
     fun getAllListByHighestSize(): Flow<List<ListEntity>>
+
+    @Query(
+        """
+            SELECT * FROM list WHERE commodity LIKE upper('%' || :commodity || '%')
+        """
+    )
+    fun getListByCommodity(commodity: String): Flow<List<ListEntity>>
 }

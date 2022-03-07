@@ -32,6 +32,7 @@ fun HomeScreen(
     list: List<ListPrice>,
     loading: Boolean = false,
     onSortClick: () -> Unit,
+    onSearchClick: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -45,7 +46,7 @@ fun HomeScreen(
                 },
                 actions = {
                     IconButton(
-                        onClick = { },
+                        onClick = onSearchClick,
                         content = {
                             Icon(
                                 painter = painterResource(id = R.drawable.ic_baseline_search_24),
@@ -161,6 +162,7 @@ fun HomeScreenPreview() {
                 size = "10"
             )
         ),
-        onSortClick = { }
+        onSortClick = { },
+        onSearchClick = { }
     )
 }

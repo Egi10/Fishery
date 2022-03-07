@@ -43,4 +43,9 @@ class LocalDataSourceImpl @Inject constructor(
         return listDao.getAllListByHighestSize()
             .flowOn(ioDispatcher)
     }
+
+    override fun getListByCommodity(commodity: String): Flow<List<ListEntity>> {
+        return listDao.getListByCommodity(commodity)
+            .flowOn(ioDispatcher)
+    }
 }

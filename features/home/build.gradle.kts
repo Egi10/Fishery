@@ -62,6 +62,8 @@ dependencies {
     implementationsHilt()
     // Compose
     implementationsCompose()
+    // ViewModelCompose
+    implementation(Dependencies.AndroidX.viewModelCompose)
     // Test
     implementationsTest()
     // Database

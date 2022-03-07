@@ -16,4 +16,5 @@ interface LocalDataSource {
     fun getAllListByHighestPrice(): Flow<List<ListEntity>>
     fun getAllListByLowestSize(): Flow<List<ListEntity>>
     fun getAllListByHighestSize(): Flow<List<ListEntity>>
+    fun getListByCommodity(commodity: String): Flow<List<ListEntity>>
 }

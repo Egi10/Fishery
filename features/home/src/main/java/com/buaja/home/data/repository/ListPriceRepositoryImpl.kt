@@ -47,4 +47,10 @@ class ListPriceRepositoryImpl @Inject constructor(
             it.mapEntity()
         }
     }
+
+    override fun getListByCommodity(commodity: String): Flow<List<ListPrice>> {
+        return localDataSource.getListByCommodity(commodity).map {
+            it.mapEntity()
+        }
+    }
 }

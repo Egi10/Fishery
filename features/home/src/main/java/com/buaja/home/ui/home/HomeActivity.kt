@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
 import com.buaja.home.R
+import com.buaja.home.ui.search.SearchDialog
 import com.buaja.home.ui.sort.SortDialog
 import com.buaja.home.ui.sort.model.Filter
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,6 +34,9 @@ class HomeActivity : ComponentActivity() {
                 loading = uiState.value.loading,
                 onSortClick = {
                     viewModel.showSortDialog()
+                },
+                onSearchClick = {
+                    viewModel.showSearchDialog()
                 }
             )
 
@@ -46,6 +50,14 @@ class HomeActivity : ComponentActivity() {
                         viewModel.updateFilter(positions)
                         viewModel.getSelectedFilter()
                         viewModel.hideSortDialog()
+                    }
+                )
+            }
+
+            if (uiState.value.showSearchDialog) {
+                SearchDialog(
+                    onDismissClick = {
+                        viewModel.hideSearchDialog()
                     }
                 )
             }

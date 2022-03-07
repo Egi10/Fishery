@@ -13,8 +13,11 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-runtime-ktx:${Version.AndroidX.lifecycleRuntimeKtx}"
         const val activityCompose =
             "androidx.activity:activity-compose:${Version.AndroidX.activityCompose}"
-        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.AndroidX.lifecycleRuntimeKtx}"
+        const val viewModel =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.AndroidX.lifecycleRuntimeKtx}"
         const val hiltCompiler = "androidx.hilt:hilt-compiler:${Version.AndroidX.hilt}"
+        const val viewModelCompose =
+            "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.AndroidX.viewModelCompose}"
     }
 
     object Compose {
