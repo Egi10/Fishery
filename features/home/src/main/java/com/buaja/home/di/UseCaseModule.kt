@@ -16,6 +16,8 @@ import com.buaja.home.domain.use_case.get_list_lowest_size.GetListLowesSizeUseCa
 import com.buaja.home.domain.use_case.get_list_lowest_size.GetListLowestSizeUseCase
 import com.buaja.home.domain.use_case.get_list_options_area.GetListOptionsAreaUseCase
 import com.buaja.home.domain.use_case.get_list_options_area.GetListOptionsAreaUseCaseImpl
+import com.buaja.home.domain.use_case.save_new_item.SaveNewItemUseCase
+import com.buaja.home.domain.use_case.save_new_item.SaveNewItemUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -79,4 +81,10 @@ abstract class UseCaseModule {
     abstract fun bindsGetListAreaProvinceUseCase(
         getListAreaProvinceImpl: GetListAreaProvinceImpl
     ): GetListAreaProvince
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindsSaveNewItemUseCase(
+        saveNewItemUseCaseImpl: SaveNewItemUseCaseImpl
+    ): SaveNewItemUseCase
 }

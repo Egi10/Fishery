@@ -34,7 +34,8 @@ fun HomeScreen(
     loading: Boolean = false,
     onSortClick: () -> Unit,
     onSearchClick: () -> Unit,
-    onFilterClick: () -> Unit
+    onFilterClick: () -> Unit,
+    onNewItemClick: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -99,7 +100,7 @@ fun HomeScreen(
                             .weight(1f),
                         drawable = R.drawable.ic_baseline_add_24,
                         text = stringResource(R.string.add),
-                        onClick = { /*TODO*/ }
+                        onClick = onNewItemClick
                     )
                 }
 
@@ -177,6 +178,7 @@ fun HomeScreenPreview() {
         ),
         onSortClick = { },
         onSearchClick = { },
-        onFilterClick = { }
+        onFilterClick = { },
+        onNewItemClick = {}
     )
 }

@@ -7,6 +7,7 @@ import com.buaja.database.entity.ListEntity
 import com.buaja.database.entity.OptionsAreaEntity
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
@@ -60,5 +61,13 @@ class LocalDataSourceImpl @Inject constructor(
     override fun getListByOptionsAreaProvince(areaProvince: String): Flow<List<ListEntity>> {
         return listDao.getListByAreaProvince(areaProvince)
             .flowOn(ioDispatcher)
+    }
+
+    override fun saveList(listEntity: ListEntity): Flow<Unit> {
+        return flow<Unit> {
+            listDao.insert(
+                listEntity
+            )
+        }.flowOn(ioDispatcher)
     }
 }

@@ -1,12 +1,14 @@
 package com.buaja.home.ui.home
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
 import com.buaja.home.R
 import com.buaja.home.ui.filter.FilterDialog
+import com.buaja.home.ui.new_item.NewItemDialog
 import com.buaja.home.ui.search.SearchDialog
 import com.buaja.home.ui.sort.SortDialog
 import com.buaja.home.ui.sort.model.Sort
@@ -41,6 +43,9 @@ class HomeActivity : ComponentActivity() {
                 },
                 onFilterClick = {
                     viewModel.showFilterDialog()
+                },
+                onNewItemClick = {
+                    viewModel.showNewItemDialog()
                 }
             )
 
@@ -81,6 +86,18 @@ class HomeActivity : ComponentActivity() {
                     }
                 )
             }
+
+            if (uiState.value.showNewItemDialog) {
+                NewItemDialog(
+                    onDismissClick = {
+                        viewModel.hideNewItemDialog()
+                    },
+                    onSuccess = {
+                        viewModel.getListPrice()
+                        viewModel.hideNewItemDialog()
+                    }
+                )
+            }
         }
     }
 
@@ -116,5 +133,13 @@ class HomeActivity : ComponentActivity() {
         viewModel.setFilter(
             list = listSort
         )
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            finish()
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }

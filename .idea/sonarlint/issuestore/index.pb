@@ -29,8 +29,6 @@ n
 >database/src/main/java/com/buaja/database/di/DatabaseModule.kt,7/a/7a272790c5181c9279d028c48ef4907ccccfd686
 u
 Elibraries/network/src/main/java/com/buaja/network/di/NetworkModule.kt,c/1/c1520553248d127fe8eb1c64deb1bfa51ba42604
-Å
-Qsync/src/main/java/com/buaja/sync/data/source/remote/response/ListResponseItem.kt,0/7/077e3bcefebdce9644135767735484eb500fefbf
 m
 =sync/src/main/java/com/buaja/sync/di/LocalDataSourceModule.kt,f/a/fa80b8b074552665340c12969cefd29be9336e36
 ?
@@ -43,8 +41,6 @@ Q
 Xsync/src/main/java/com/buaja/sync/data/source/remote/response/OptionsSizeResponseItem.kt,c/f/cf96bea3cab6637f6e7e21aeeb75c7b8e34e59f1
 w
 Glibraries/network/src/main/java/com/buaja/network/utils/ApiConstants.kt,3/5/356a2af5be2bc3276a4fdb2eab526f5e56fa8488
-h
-8sync/src/main/java/com/buaja/sync/di/ApiServiceModule.kt,9/0/90063253fce14bc105ffcb3501ed4ef7983c34da
 v
 Fsync/src/main/java/com/buaja/sync/data/source/local/LocalDataSource.kt,7/8/78fc21930b947268fe2e0578369c3c08679db59b
 n
@@ -61,16 +57,12 @@ Z
 *app/src/main/java/com/buaja/fishery/App.kt,5/7/570b959f38301461cc3cea89ea1aa5ace5531ba4
 G
 sync/consumer-rules.pro,9/f/9fe0e972118e631638b2ee823e0b91205b8e20fc
-}
-Msync/src/main/java/com/buaja/sync/data/source/remote/routes/FisheryService.kt,a/7/a7cac21b2851cc317034626e164d74141f8f19d6
 G
 sync/proguard-rules.pro,a/f/af6fcc13bc2a09743790a5128d49e81298df3c2e
 R
 "libraries/network/build.gradle.kts,6/2/624f9448400472bd612032e4728fe8c0e86b8caa
 s
 Csync/src/androidTest/java/com/buaja/sync/ExampleInstrumentedTest.kt,a/d/ad27d151edbc330304545df56c1c1f645c6980e9
-E
-sync/build.gradle.kts,6/5/65db87200c2f31acc7a87ede5c6e7723d644f35a
 o
 ?database/src/main/java/com/buaja/database/db/FisheryDatabase.kt,9/1/91d3c8dc0926d7f47f451826a4e82502c69ddb35
 V
@@ -107,8 +99,6 @@ S
 #commons/ui-theme/consumer-rules.pro,d/d/ddeb781e6cf01b806ae95e11231eff3e49d63df0
 S
 #commons/ui-theme/proguard-rules.pro,5/9/59a45684dae8fef44c727f2edc714d95fd7b7bc2
-v
-Ffeatures/home/src/main/java/com/buaja/home/di/LocalDataSourceModule.kt,d/8/d8e41dce5536ac74a42703e42c0a832037b2479c
 K
 commons/ui-theme/.gitignore,f/d/fd3c519e3ba33b1f2654c20e0ccaed8e48eb73ed
 ]
@@ -123,8 +113,6 @@ Scommons/ui-theme/src/androidTest/java/com/buaja/ui_theme/ExampleInstrumentedTes
 Nfeatures/home/src/main/java/com/buaja/home/ui/home/components/InitialsImage.kt,9/b/9b9ed49b35bb31ba88fc1e23f1f3789fd85d4ee2
 j
 :commons/ui-theme/src/main/java/com/buaja/ui_theme/Theme.kt,9/9/992fede832c7b2acc3c0ba948237f2ce81923750
-c
-3app/src/main/java/com/buaja/fishery/MainActivity.kt,3/2/3281b4fe01bd789b245781b9322971bc637ba6b3
 D
 app/build.gradle.kts,d/2/d2a4383452aad84a18429a5844d31330a012a9e6
 P
@@ -171,8 +159,6 @@ j
 :commons/ui-theme/src/main/java/com/buaja/ui_theme/Color.kt,8/1/8137d052bb683d0a784329654989feb840dd9da0
 ä
 Zfeatures/home/src/main/java/com/buaja/home/domain/use_case/get_list/GetListPriceUseCase.kt,4/e/4e8da72b7324f6631503d090fa20ef90e6e8660a
-Z
-*features/home/src/main/AndroidManifest.xml,b/a/ba6dddbaf2626aae4ba9e982a47f8a099142d3c9
 V
 &buildSrc/src/main/java/Dependencies.kt,e/8/e814710098f674890a8b6d2265ec0d2432e04a92
 ú

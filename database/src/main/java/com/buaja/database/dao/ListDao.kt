@@ -58,7 +58,7 @@ interface ListDao : BaseDao<ListEntity> {
 
     @Query(
         """
-            SELECT * FROM list WHERE area_province = :areaProvince
+            SELECT * FROM list WHERE area_province LIKE upper('%' || :areaProvince || '%')
         """
     )
     fun getListByAreaProvince(areaProvince: String): Flow<List<ListEntity>>

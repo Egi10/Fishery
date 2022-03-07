@@ -14,5 +14,6 @@ data class HomeUiState(
     val loading: Boolean = false,
     val showSortDialog: Boolean = false,
     val showSearchDialog: Boolean = false,
-    val showFilterDialog: Boolean = false
+    val showFilterDialog: Boolean = false,
+    val showNewItemDialog: Boolean = false
 )

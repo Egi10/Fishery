@@ -212,4 +212,20 @@ class HomeViewModel @Inject constructor(
             )
         }
     }
+
+    fun showNewItemDialog() {
+        _uiState.update {
+            it.copy(
+                showNewItemDialog = true
+            )
+        }
+    }
+
+    fun hideNewItemDialog() {
+        _uiState.update {
+            it.copy(
+                showNewItemDialog = false
+            )
+        }
+    }
 }

@@ -1,9 +1,12 @@
 package com.buaja.home.data.repository
 
 import com.buaja.home.data.source.local.LocalDataSource
+import com.buaja.home.data.source.remote.RemoteDataSource
 import com.buaja.home.domain.model.ListPrice
+import com.buaja.home.domain.model.NewItemRequest
 import com.buaja.home.domain.model.mapEntity
 import com.buaja.home.domain.repository.ListPriceRepository
+import com.buaja.sync.data.source.remote.response.ListResponseItem
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -16,7 +19,8 @@ import javax.inject.Inject
  **/
 
 class ListPriceRepositoryImpl @Inject constructor(
-    private val localDataSource: LocalDataSource
+    private val localDataSource: LocalDataSource,
+    private val remoteDataSource: RemoteDataSource
 ) : ListPriceRepository {
     override fun getAllList(): Flow<List<ListPrice>> {
         return localDataSource.getAllList().map {
@@ -57,6 +61,24 @@ class ListPriceRepositoryImpl @Inject constructor(
     override fun getListByAreaProvince(areaProvince: String): Flow<List<ListPrice>> {
         return localDataSource.getListByOptionsAreaProvince(areaProvince).map {
             it.mapEntity()
+        }
+    }
+
+    override fun saveNewItem(newItemRequest: NewItemRequest): Flow<String> {
+        val listResponseItem = listOf(
+            ListResponseItem(
+                uuid = newItemRequest.uuid,
+                timestamp = newItemRequest.timestamp,
+                areaProvince = newItemRequest.areaProvince,
+                areaCity = newItemRequest.areaCity,
+                commodity = newItemRequest.areaCity,
+                size = newItemRequest.size,
+                price = newItemRequest.price,
+                tglParsed = newItemRequest.dateParse
+            )
+        )
+        return remoteDataSource.saveNewItem(listResponseItem).map {
+            it.updatedRange
         }
     }
 }

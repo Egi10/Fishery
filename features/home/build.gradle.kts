@@ -74,6 +74,8 @@ dependencies {
     implementation(project(Module.Commons.uiTheme))
     // Sync
     implementation(project(Module.sync))
+    // Network
+    implementation(project(Module.Libraries.network))
 }
 
 kapt {

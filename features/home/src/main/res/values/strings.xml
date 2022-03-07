@@ -5,6 +5,11 @@
     <string name="filter">Filter</string>
     <string name="add">Tambah</string>
     <string name="search_commudity">Cari komunidatas</string>
+    <string name="area_province">Area Province</string>
+    <string name="area_city">Area Kota</string>
+    <string name="commodity">Komoditas</string>
+    <string name="price">Harga</string>
+    <string name="save">Simpan</string>
 
     <string-array name="sort_list">
         <item>Default</item>

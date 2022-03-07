@@ -20,4 +20,5 @@ interface LocalDataSource {
     fun getListByCommodity(commodity: String): Flow<List<ListEntity>>
     fun getListOptionArea(): Flow<List<OptionsAreaEntity>>
     fun getListByOptionsAreaProvince(areaProvince: String): Flow<List<ListEntity>>
+    fun saveList(listEntity: ListEntity): Flow<Unit>
 }

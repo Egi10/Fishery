@@ -1,6 +1,7 @@
 package com.buaja.home.domain.repository
 
 import com.buaja.home.domain.model.ListPrice
+import com.buaja.home.domain.model.NewItemRequest
 import kotlinx.coroutines.flow.Flow
 
 
@@ -18,4 +19,5 @@ interface ListPriceRepository {
     fun getAllListByHighestSize(): Flow<List<ListPrice>>
     fun getListByCommodity(commodity: String): Flow<List<ListPrice>>
     fun getListByAreaProvince(areaProvince: String): Flow<List<ListPrice>>
+    fun saveNewItem(newItemRequest: NewItemRequest): Flow<String>
 }
