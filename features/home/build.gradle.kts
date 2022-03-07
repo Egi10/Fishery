@@ -70,6 +70,8 @@ dependencies {
     implementation(project(Module.Libraries.abstraction))
     // Ui-View
     implementation(project(Module.Commons.uiTheme))
+    // Sync
+    implementation(project(Module.sync))
 }
 
 kapt {

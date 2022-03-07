@@ -1,5 +1,6 @@
 package com.buaja.sync.utils
 
+import com.buaja.abstraction.extensions.hashString
 import com.buaja.database.entity.ListEntity
 import com.buaja.database.entity.OptionsAreaEntity
 import com.buaja.database.entity.OptionsSizeEntity
@@ -28,7 +29,11 @@ object DataMapper {
                     price = it.price ?: "",
                     tglParsed = it.tglParsed ?: "",
                     timestamp = it.timestamp ?: "",
-                    uuid = it.uuid ?: ""
+                    uuid = if (it.uuid.isNullOrEmpty()) {
+                        it.tglParsed.toString().hashString()
+                    } else {
+                        it.uuid
+                    }
                 )
             )
         }

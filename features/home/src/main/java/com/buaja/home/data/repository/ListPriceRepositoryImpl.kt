@@ -17,9 +17,33 @@ import javax.inject.Inject
 
 class ListPriceRepositoryImpl @Inject constructor(
     private val localDataSource: LocalDataSource
-): ListPriceRepository {
+) : ListPriceRepository {
     override fun getAllList(): Flow<List<ListPrice>> {
         return localDataSource.getAllList().map {
+            it.mapEntity()
+        }
+    }
+
+    override fun getAllListByLowestPrice(): Flow<List<ListPrice>> {
+        return localDataSource.getAllListByLowestPrice().map {
+            it.mapEntity()
+        }
+    }
+
+    override fun getAllListByHighestPrice(): Flow<List<ListPrice>> {
+        return localDataSource.getAllListByHighestPrice().map {
+            it.mapEntity()
+        }
+    }
+
+    override fun getAllListByLowestSize(): Flow<List<ListPrice>> {
+        return localDataSource.getAllListByLowestSize().map {
+            it.mapEntity()
+        }
+    }
+
+    override fun getAllListByHighestSize(): Flow<List<ListPrice>> {
+        return localDataSource.getAllListByHighestSize().map {
             it.mapEntity()
         }
     }

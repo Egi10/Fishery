@@ -2,6 +2,14 @@ package com.buaja.home.di
 
 import com.buaja.home.domain.use_case.get_list.GetListPriceUseCase
 import com.buaja.home.domain.use_case.get_list.GetListPriceUseCaseImpl
+import com.buaja.home.domain.use_case.get_list_highest_price.GetListHighestPriceUseCase
+import com.buaja.home.domain.use_case.get_list_highest_price.GetListHighestPriceUseCaseImpl
+import com.buaja.home.domain.use_case.get_list_highest_size.GetListHighestSizeUseCase
+import com.buaja.home.domain.use_case.get_list_highest_size.GetListHighestSizeUseCaseImpl
+import com.buaja.home.domain.use_case.get_list_lowest_price.GetListLowestPriceUseCase
+import com.buaja.home.domain.use_case.get_list_lowest_price.GetListLowestPriceUseCaseImpl
+import com.buaja.home.domain.use_case.get_list_lowest_size.GetListLowesSizeUseCaseImpl
+import com.buaja.home.domain.use_case.get_list_lowest_size.GetListLowestSizeUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -23,4 +31,28 @@ abstract class UseCaseModule {
     abstract fun bindsGetListPriceUseCase(
         getListPriceUseCaseImpl: GetListPriceUseCaseImpl
     ): GetListPriceUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindsGetListLowestPriceUseCase(
+        getListLowestPriceImpl: GetListLowestPriceUseCaseImpl
+    ): GetListLowestPriceUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindGetListHighestPriceUseCase(
+        getListHighestPriceImpl: GetListHighestPriceUseCaseImpl
+    ): GetListHighestPriceUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindGetListHighestSize(
+        getListHighestSizeUseCaseImpl: GetListHighestSizeUseCaseImpl
+    ): GetListHighestSizeUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindGetListLowestSize(
+        getListLowesSizeUseCaseImpl: GetListLowesSizeUseCaseImpl
+    ): GetListLowestSizeUseCase
 }

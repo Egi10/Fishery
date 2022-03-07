@@ -12,4 +12,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface LocalDataSource {
     fun getAllList(): Flow<List<ListEntity>>
+    fun getAllListByLowestPrice(): Flow<List<ListEntity>>
+    fun getAllListByHighestPrice(): Flow<List<ListEntity>>
+    fun getAllListByLowestSize(): Flow<List<ListEntity>>
+    fun getAllListByHighestSize(): Flow<List<ListEntity>>
 }

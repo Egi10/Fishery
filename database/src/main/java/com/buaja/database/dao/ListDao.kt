@@ -14,8 +14,38 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ListDao : BaseDao<ListEntity> {
-    @Query("""
+    @Query(
+        """
         SELECT * FROM list
-    """)
+    """
+    )
     fun getAllList(): Flow<List<ListEntity>>
+
+    @Query(
+        """
+            SELECT * FROM list ORDER BY price + 0 ASC
+        """
+    )
+    fun getAllListByLowestPrice(): Flow<List<ListEntity>>
+
+    @Query(
+        """
+            SELECT * FROM list ORDER BY price + 0 DESC
+        """
+    )
+    fun getAllListByHighestPrice(): Flow<List<ListEntity>>
+
+    @Query(
+        """
+            SELECT * FROM list ORDER BY size + 0 ASC
+        """
+    )
+    fun getAllListByLowestSize(): Flow<List<ListEntity>>
+
+    @Query(
+        """
+            SELECT * FROM list ORDER BY size + 0 DESC
+        """
+    )
+    fun getAllListByHighestSize(): Flow<List<ListEntity>>
 }

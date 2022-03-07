@@ -11,5 +11,6 @@ import com.buaja.home.domain.model.ListPrice
 
 data class HomeUiState(
     val list: List<ListPrice> = emptyList(),
-    val loading: Boolean = false
+    val loading: Boolean = false,
+    val showSortDialog: Boolean = false
 )

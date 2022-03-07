@@ -31,12 +31,6 @@ n
 >database/src/main/java/com/buaja/database/di/DatabaseModule.kt,7/a/7a272790c5181c9279d028c48ef4907ccccfd686
 u
 Elibraries/network/src/main/java/com/buaja/network/di/NetworkModule.kt,c/1/c1520553248d127fe8eb1c64deb1bfa51ba42604
-e
-5sync/src/main/java/com/buaja/sync/utils/DataMapper.kt,f/6/f65fc9e64bfcab47f4b1b23646e78634737cf0ea
-z
-Jsync/src/main/java/com/buaja/sync/data/source/local/LocalDataSourceImpl.kt,e/3/e3bb3f60ff172717b960a04c12168f7551d3eca9
-|
-Lsync/src/main/java/com/buaja/sync/domain/repository/SyncFisheryRepository.kt,0/5/05c1f56c2c4aceeed22e97afc3ef59673770a800
 
 Qsync/src/main/java/com/buaja/sync/data/source/remote/response/ListResponseItem.kt,0/7/077e3bcefebdce9644135767735484eb500fefbf
 m
@@ -47,8 +41,6 @@ m
 Xsync/src/main/java/com/buaja/sync/data/source/remote/response/OptionsAreaResponseItem.kt,b/a/ba79cf755c9e0afa7f9762b174ef3b9fd54f0c8b
 Q
 !sync/src/main/AndroidManifest.xml,9/e/9e180709bc9ffb1ed4145f8d8378f35b945f5ae2
-i
-9sync/src/main/java/com/buaja/sync/worker/FisheryWorker.kt,6/c/6cf6264a6e74d4570000c0ad07d37b5595e2d0f6
 ˆ
 Xsync/src/main/java/com/buaja/sync/data/source/remote/response/OptionsSizeResponseItem.kt,c/f/cf96bea3cab6637f6e7e21aeeb75c7b8e34e59f1
 w
@@ -61,8 +53,6 @@ n
 >sync/src/main/java/com/buaja/sync/di/RemoteDataSourceModule.kt,e/a/ead4d25a016ea618b62cffd109d92bf8160c27a1
 h
 8sync/src/main/java/com/buaja/sync/di/RepositoryModule.kt,e/5/e51444dd384c0950d72881401ac3baf182fcda40
-}
-Msync/src/main/java/com/buaja/sync/data/repository/SyncFisheryRepositoryImp.kt,1/2/128091f5f64831d1914fbf08aaaa292a6bfe787f
 |
 Lsync/src/main/java/com/buaja/sync/data/source/remote/RemoteDataSourceImpl.kt,d/9/d9f863890f09016ac3a1e630fb17a80f8f2391d6
 x
@@ -75,8 +65,6 @@ G
 sync/consumer-rules.pro,9/f/9fe0e972118e631638b2ee823e0b91205b8e20fc
 }
 Msync/src/main/java/com/buaja/sync/data/source/remote/routes/FisheryService.kt,a/7/a7cac21b2851cc317034626e164d74141f8f19d6
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 G
 sync/proguard-rules.pro,a/f/af6fcc13bc2a09743790a5128d49e81298df3c2e
 R
@@ -89,3 +77,57 @@ o
 ?database/src/main/java/com/buaja/database/db/FisheryDatabase.kt,9/1/91d3c8dc0926d7f47f451826a4e82502c69ddb35
 V
 &libraries/abstraction/build.gradle.kts,9/b/9b6e03ad40864e431ae1a39210c03c52b8d2f436
+~
+Nfeatures/home/src/main/java/com/buaja/home/ui/home/components/ItemListPrice.kt,0/9/09d9edcba5d5616303013a847d24a7562b1ab7df
+H
+features/home/.gitignore,2/3/2319d90bf853762e6167339faf54e0fb666f0cac
+|
+Lfeatures/home/src/androidTest/java/com/buaja/home/ExampleInstrumentedTest.kt,5/5/5552aaab813b022081dc297d9765fa1df88a0df6
+q
+Afeatures/home/src/main/java/com/buaja/home/di/RepositoryModule.kt,2/2/2287cf66bf8f7e59f6461f11c2fd24df4f38a0ec
+P
+ features/home/consumer-rules.pro,1/4/1479f7efca600bb9b8fe6b1fb8f72eb91a726360
+m
+=features/home/src/test/java/com/buaja/home/ExampleUnitTest.kt,1/8/18d2939f986d7b7147239103d450d21e75276910
+P
+ features/home/proguard-rules.pro,0/3/03d1112dfb54855cfd743c8cfd6b109d68a589ca
+Q
+!buildSrc/src/main/java/Version.kt,b/5/b5a062f6109cc58f32879b115db125eec988c6ff
+P
+ buildSrc/src/main/java/Module.kt,d/d/ddfa382a0893d8f808eb85c2ec32ad2fd7dc2970
+C
+settings.gradle.kts,7/4/749edfcc96398253e5b3416184e95c46621da850
+u
+Edatabase/src/main/java/com/buaja/database/entity/OptionsSizeEntity.kt,f/8/f88136f9fee0f6c4e56c43fbf94b258f4a650254
+u
+Edatabase/src/main/java/com/buaja/database/entity/OptionsAreaEntity.kt,7/a/7a3e0ea6190ecc3560cebb4ddd1c7477196c8c75
+v
+Fcommons/ui-theme/src/main/java/com/buaja/ui_theme/extensions/Spacer.kt,c/3/c3c44342ef237c3ea484d7f41041130f507cad6a
+V
+&buildSrc/src/main/java/Dependencies.kt,e/8/e814710098f674890a8b6d2265ec0d2432e04a92
+t
+Dcommons/ui-theme/src/test/java/com/buaja/ui_theme/ExampleUnitTest.kt,e/7/e782f89b1b78e60b870a521da90af1f7a6e86b01
+€
+Pfeatures/home/src/main/java/com/buaja/home/ui/home/components/DividerVertical.kt,e/8/e8bfa99516dd683d37155ca02086477f770e6a00
+j
+:commons/ui-theme/src/main/java/com/buaja/ui_theme/Shape.kt,8/6/860bb7225ed9b13c8cee4824426194cc3ed359d8
+S
+#commons/ui-theme/consumer-rules.pro,d/d/ddeb781e6cf01b806ae95e11231eff3e49d63df0
+S
+#commons/ui-theme/proguard-rules.pro,5/9/59a45684dae8fef44c727f2edc714d95fd7b7bc2
+v
+Ffeatures/home/src/main/java/com/buaja/home/di/LocalDataSourceModule.kt,d/8/d8e41dce5536ac74a42703e42c0a832037b2479c
+K
+commons/ui-theme/.gitignore,f/d/fd3c519e3ba33b1f2654c20e0ccaed8e48eb73ed
+]
+-commons/ui-theme/src/main/AndroidManifest.xml,a/8/a8cf2a04e8d1ca28091b33b9eec13bfd33c8722d
+Q
+!commons/ui-theme/build.gradle.kts,e/4/e4960d5882e756fb669dec2802bae8030c38cfec
+i
+9commons/ui-theme/src/main/java/com/buaja/ui_theme/Type.kt,3/3/331506b69c873bce846560e818060186cce38364
+ƒ
+Scommons/ui-theme/src/androidTest/java/com/buaja/ui_theme/ExampleInstrumentedTest.kt,1/c/1c22ed12380edc573458196c98cf2ac71dddc172
+j
+:commons/ui-theme/src/main/java/com/buaja/ui_theme/Color.kt,8/1/8137d052bb683d0a784329654989feb840dd9da0
+~
+Nfeatures/home/src/main/java/com/buaja/home/ui/home/components/InitialsImage.kt,9/b/9b9ed49b35bb31ba88fc1e23f1f3789fd85d4ee2

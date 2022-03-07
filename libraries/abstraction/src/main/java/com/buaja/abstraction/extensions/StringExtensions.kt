@@ -1,5 +1,6 @@
 package com.buaja.abstraction.extensions
 
+import java.security.MessageDigest
 import java.text.NumberFormat
 import java.util.*
 
@@ -61,4 +62,11 @@ fun String.getInitials(): String {
     }
 
     return result
+}
+
+fun String.hashString(): String {
+    return MessageDigest
+        .getInstance("SHA-256")
+        .digest(this.toByteArray())
+        .fold("") { str, it -> str + "%02x".format(it) }
 }

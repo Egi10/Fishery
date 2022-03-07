@@ -29,7 +29,9 @@ import com.buaja.ui_theme.extensions.Space
 
 @Composable
 fun HomeScreen(
-    list: List<ListPrice>
+    list: List<ListPrice>,
+    loading: Boolean = false,
+    onSortClick: () -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -57,7 +59,8 @@ fun HomeScreen(
         content = {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Space(height = 8.dp)
 
@@ -73,7 +76,7 @@ fun HomeScreen(
                             .weight(1f),
                         drawable = R.drawable.ic_baseline_sort_24,
                         text = stringResource(R.string.sort),
-                        onClick = { /*TODO*/ }
+                        onClick = onSortClick
                     )
 
                     DividerVertical()
@@ -100,6 +103,11 @@ fun HomeScreen(
                 Space(height = 8.dp)
 
                 Divider()
+
+                if (loading) {
+                    Space(height = 8.dp)
+                    CircularProgressIndicator()
+                }
 
                 Space(height = 8.dp)
 
@@ -152,6 +160,7 @@ fun HomeScreenPreview() {
                 areaCity = "Padang",
                 size = "10"
             )
-        )
+        ),
+        onSortClick = { }
     )
 }

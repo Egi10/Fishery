@@ -12,4 +12,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface ListPriceRepository {
     fun getAllList(): Flow<List<ListPrice>>
+    fun getAllListByLowestPrice(): Flow<List<ListPrice>>
+    fun getAllListByHighestPrice(): Flow<List<ListPrice>>
+    fun getAllListByLowestSize(): Flow<List<ListPrice>>
+    fun getAllListByHighestSize(): Flow<List<ListPrice>>
 }

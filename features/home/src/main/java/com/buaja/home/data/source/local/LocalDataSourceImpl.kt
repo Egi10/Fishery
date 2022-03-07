@@ -23,4 +23,24 @@ class LocalDataSourceImpl @Inject constructor(
         return listDao.getAllList()
             .flowOn(ioDispatcher)
     }
+
+    override fun getAllListByLowestPrice(): Flow<List<ListEntity>> {
+        return listDao.getAllListByLowestPrice()
+            .flowOn(ioDispatcher)
+    }
+
+    override fun getAllListByHighestPrice(): Flow<List<ListEntity>> {
+        return listDao.getAllListByHighestPrice()
+            .flowOn(ioDispatcher)
+    }
+
+    override fun getAllListByLowestSize(): Flow<List<ListEntity>> {
+        return listDao.getAllListByLowestSize()
+            .flowOn(ioDispatcher)
+    }
+
+    override fun getAllListByHighestSize(): Flow<List<ListEntity>> {
+        return listDao.getAllListByHighestSize()
+            .flowOn(ioDispatcher)
+    }
 }

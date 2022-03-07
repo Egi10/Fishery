@@ -4,4 +4,12 @@
     <string name="sort">Urutkan</string>
     <string name="filter">Filter</string>
     <string name="add">Tambah</string>
+
+    <string-array name="sort_list">
+        <item>Default</item>
+        <item>Harga Terendah</item>
+        <item>Harga Tertinggi</item>
+        <item>Ukuran Terkecil</item>
+        <item>Ukuran Terbesar</item>
+    </string-array>
 </resources>
