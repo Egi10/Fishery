@@ -53,4 +53,10 @@ class ListPriceRepositoryImpl @Inject constructor(
             it.mapEntity()
         }
     }
+
+    override fun getListByAreaProvince(areaProvince: String): Flow<List<ListPrice>> {
+        return localDataSource.getListByOptionsAreaProvince(areaProvince).map {
+            it.mapEntity()
+        }
+    }
 }

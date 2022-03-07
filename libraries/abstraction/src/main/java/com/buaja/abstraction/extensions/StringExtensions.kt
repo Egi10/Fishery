@@ -28,10 +28,14 @@ fun String.formatZero(): String {
 }
 
 fun String.removeSpaceFirst(): String {
-    return if (this.first() == ' ') {
-        this.replace(" ", "")
+    return if (this.isNotEmpty()) {
+        if (this.first() == ' ') {
+            this.replace(" ", "")
+        } else {
+            this
+        }
     } else {
-        this
+        ""
     }
 }
 

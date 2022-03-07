@@ -3,12 +3,13 @@ package com.buaja.home.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.buaja.home.domain.use_case.get_list.GetListPriceUseCase
+import com.buaja.home.domain.use_case.get_list_area_province.GetListAreaProvince
 import com.buaja.home.domain.use_case.get_list_highest_price.GetListHighestPriceUseCase
 import com.buaja.home.domain.use_case.get_list_highest_size.GetListHighestSizeUseCase
 import com.buaja.home.domain.use_case.get_list_lowest_price.GetListLowestPriceUseCase
 import com.buaja.home.domain.use_case.get_list_lowest_size.GetListLowestSizeUseCase
 import com.buaja.home.ui.home.model.HomeUiState
-import com.buaja.home.ui.sort.model.Filter
+import com.buaja.home.ui.sort.model.Sort
 import com.buaja.sync.domain.use_case.SyncDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
@@ -29,14 +30,15 @@ class HomeViewModel @Inject constructor(
     private val getListHighestPriceUseCase: GetListHighestPriceUseCase,
     private val syncDataUseCase: SyncDataUseCase,
     private val getListHighestSizeUseCase: GetListHighestSizeUseCase,
-    private val getListLowestSizeUseCase: GetListLowestSizeUseCase
+    private val getListLowestSizeUseCase: GetListLowestSizeUseCase,
+    private val getListAreaProvince: GetListAreaProvince
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> get() = _uiState
 
-    private val _listFilter = MutableStateFlow<List<Filter>>(listOf())
-    val listFilter: StateFlow<List<Filter>> get() = _listFilter
+    private val _listFilter = MutableStateFlow<List<Sort>>(listOf())
+    val listSort: StateFlow<List<Sort>> get() = _listFilter
 
     fun getListPrice() {
         viewModelScope.launch {
@@ -71,9 +73,9 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun getSelectedFilter() {
+    fun getSelectedSort() {
         viewModelScope.launch {
-            val filter = listFilter.value.filter {
+            val filter = listSort.value.filter {
                 it.status
             }
             when {
@@ -124,18 +126,33 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private suspend fun getAllList() {
-        getListPriceUseCase.invoke()
-            .collect {
-                _uiState.update { uiState ->
-                    uiState.copy(
-                        list = it
-                    )
+    fun getSelectedFilter(areaProvince: String) {
+        viewModelScope.launch {
+            getListAreaProvince.invoke(areaProvince)
+                .collect {
+                    _uiState.update { uiState ->
+                        uiState.copy(
+                            list = it
+                        )
+                    }
                 }
-            }
+        }
     }
 
-    fun setFilter(list: List<Filter>) {
+    fun getAllList() {
+        viewModelScope.launch {
+            getListPriceUseCase.invoke()
+                .collect {
+                    _uiState.update { uiState ->
+                        uiState.copy(
+                            list = it
+                        )
+                    }
+                }
+        }
+    }
+
+    fun setFilter(list: List<Sort>) {
         _listFilter.value = list
     }
 
@@ -176,6 +193,22 @@ class HomeViewModel @Inject constructor(
         _uiState.update {
             it.copy(
                 showSearchDialog = false
+            )
+        }
+    }
+
+    fun showFilterDialog() {
+        _uiState.update {
+            it.copy(
+                showFilterDialog = true
+            )
+        }
+    }
+
+    fun hideFilterDialog() {
+        _uiState.update {
+            it.copy(
+                showFilterDialog = false
             )
         }
     }

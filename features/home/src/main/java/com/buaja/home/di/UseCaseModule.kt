@@ -2,6 +2,8 @@ package com.buaja.home.di
 
 import com.buaja.home.domain.use_case.get_list.GetListPriceUseCase
 import com.buaja.home.domain.use_case.get_list.GetListPriceUseCaseImpl
+import com.buaja.home.domain.use_case.get_list_area_province.GetListAreaProvince
+import com.buaja.home.domain.use_case.get_list_area_province.GetListAreaProvinceImpl
 import com.buaja.home.domain.use_case.get_list_commodity.GetListCommodityUseCase
 import com.buaja.home.domain.use_case.get_list_commodity.GetListCommodityUseCaseImpl
 import com.buaja.home.domain.use_case.get_list_highest_price.GetListHighestPriceUseCase
@@ -12,6 +14,8 @@ import com.buaja.home.domain.use_case.get_list_lowest_price.GetListLowestPriceUs
 import com.buaja.home.domain.use_case.get_list_lowest_price.GetListLowestPriceUseCaseImpl
 import com.buaja.home.domain.use_case.get_list_lowest_size.GetListLowesSizeUseCaseImpl
 import com.buaja.home.domain.use_case.get_list_lowest_size.GetListLowestSizeUseCase
+import com.buaja.home.domain.use_case.get_list_options_area.GetListOptionsAreaUseCase
+import com.buaja.home.domain.use_case.get_list_options_area.GetListOptionsAreaUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -63,4 +67,16 @@ abstract class UseCaseModule {
     abstract fun bindGetListCommodityUseCase(
         getListCommodityUseCaseImpl: GetListCommodityUseCaseImpl
     ): GetListCommodityUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindsGetListOptionsAreaUseCase(
+        getListOptionsAreaUseCaseImpl: GetListOptionsAreaUseCaseImpl
+    ): GetListOptionsAreaUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindsGetListAreaProvinceUseCase(
+        getListAreaProvinceImpl: GetListAreaProvinceImpl
+    ): GetListAreaProvince
 }

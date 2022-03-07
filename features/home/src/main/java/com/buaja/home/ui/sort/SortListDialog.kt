@@ -17,7 +17,7 @@ import androidx.compose.ui.window.Dialog
 import com.buaja.home.R
 import com.buaja.home.ui.components.TopAppBarFishery
 import com.buaja.home.ui.sort.components.ItemFilter
-import com.buaja.home.ui.sort.model.Filter
+import com.buaja.home.ui.sort.model.Sort
 import com.buaja.ui_theme.extensions.Space
 
 
@@ -31,7 +31,7 @@ import com.buaja.ui_theme.extensions.Space
 fun SortDialog(
     onDismissClick: () -> Unit,
     onSelectedClick: (Int) -> Unit,
-    list: List<Filter>
+    list: List<Sort>
 ) {
     Dialog(onDismissRequest = { }) {
         Column(
@@ -59,7 +59,8 @@ fun SortDialog(
                 content = {
                     itemsIndexed(list) { positions, item ->
                         ItemFilter(
-                            filter = item,
+                            text = item.text,
+                            status = item.status,
                             onClick = {
                                 onSelectedClick.invoke(positions)
                             }

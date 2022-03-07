@@ -17,4 +17,5 @@ interface ListPriceRepository {
     fun getAllListByLowestSize(): Flow<List<ListPrice>>
     fun getAllListByHighestSize(): Flow<List<ListPrice>>
     fun getListByCommodity(commodity: String): Flow<List<ListPrice>>
+    fun getListByAreaProvince(areaProvince: String): Flow<List<ListPrice>>
 }

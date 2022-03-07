@@ -6,9 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
 import com.buaja.home.R
+import com.buaja.home.ui.filter.FilterDialog
 import com.buaja.home.ui.search.SearchDialog
 import com.buaja.home.ui.sort.SortDialog
-import com.buaja.home.ui.sort.model.Filter
+import com.buaja.home.ui.sort.model.Sort
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -27,7 +28,7 @@ class HomeActivity : ComponentActivity() {
 
         setContent {
             val uiState = viewModel.uiState.collectAsState()
-            val filter = viewModel.listFilter.collectAsState()
+            val filter = viewModel.listSort.collectAsState()
 
             HomeScreen(
                 list = uiState.value.list,
@@ -37,6 +38,9 @@ class HomeActivity : ComponentActivity() {
                 },
                 onSearchClick = {
                     viewModel.showSearchDialog()
+                },
+                onFilterClick = {
+                    viewModel.showFilterDialog()
                 }
             )
 
@@ -48,7 +52,7 @@ class HomeActivity : ComponentActivity() {
                     list = filter.value,
                     onSelectedClick = { positions ->
                         viewModel.updateFilter(positions)
-                        viewModel.getSelectedFilter()
+                        viewModel.getSelectedSort()
                         viewModel.hideSortDialog()
                     }
                 )
@@ -58,6 +62,22 @@ class HomeActivity : ComponentActivity() {
                 SearchDialog(
                     onDismissClick = {
                         viewModel.hideSearchDialog()
+                    }
+                )
+            }
+
+            if (uiState.value.showFilterDialog) {
+                FilterDialog(
+                    onDismissClick = {
+                        viewModel.hideFilterDialog()
+                    },
+                    onSelectedClick = {
+                        viewModel.getSelectedFilter(areaProvince = it)
+                        viewModel.hideFilterDialog()
+                    },
+                    onClearClick = {
+                        viewModel.getAllList()
+                        viewModel.hideFilterDialog()
                     }
                 )
             }
@@ -73,19 +93,19 @@ class HomeActivity : ComponentActivity() {
     }
 
     private fun setListFilter() {
-        val listFilter: MutableList<Filter> = mutableListOf()
+        val listSort: MutableList<Sort> = mutableListOf()
         val list = resources.getStringArray(R.array.sort_list)
         list.mapIndexed { index, s ->
             if (index == 0) {
-                listFilter.add(
-                    Filter(
+                listSort.add(
+                    Sort(
                         text = s,
                         status = true
                     )
                 )
             } else {
-                listFilter.add(
-                    Filter(
+                listSort.add(
+                    Sort(
                         text = s,
                         status = false
                     )
@@ -94,7 +114,7 @@ class HomeActivity : ComponentActivity() {
         }
 
         viewModel.setFilter(
-            list = listFilter
+            list = listSort
         )
     }
 }

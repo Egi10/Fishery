@@ -55,4 +55,11 @@ interface ListDao : BaseDao<ListEntity> {
         """
     )
     fun getListByCommodity(commodity: String): Flow<List<ListEntity>>
+
+    @Query(
+        """
+            SELECT * FROM list WHERE area_province = :areaProvince
+        """
+    )
+    fun getListByAreaProvince(areaProvince: String): Flow<List<ListEntity>>
 }

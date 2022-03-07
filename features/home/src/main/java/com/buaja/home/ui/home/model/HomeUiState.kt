@@ -13,5 +13,6 @@ data class HomeUiState(
     val list: List<ListPrice> = emptyList(),
     val loading: Boolean = false,
     val showSortDialog: Boolean = false,
-    val showSearchDialog: Boolean = false
+    val showSearchDialog: Boolean = false,
+    val showFilterDialog: Boolean = false
 )

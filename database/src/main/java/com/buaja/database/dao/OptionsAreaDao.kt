@@ -1,7 +1,9 @@
 package com.buaja.database.dao
 
 import androidx.room.Dao
+import androidx.room.Query
 import com.buaja.database.entity.OptionsAreaEntity
+import kotlinx.coroutines.flow.Flow
 
 
 /**
@@ -12,4 +14,10 @@ import com.buaja.database.entity.OptionsAreaEntity
 
 @Dao
 interface OptionsAreaDao : BaseDao<OptionsAreaEntity> {
+    @Query(
+        """
+            SELECT * FROM options_area
+        """
+    )
+    fun getAllOptionArea(): Flow<List<OptionsAreaEntity>>
 }

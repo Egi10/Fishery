@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -32,7 +33,8 @@ fun HomeScreen(
     list: List<ListPrice>,
     loading: Boolean = false,
     onSortClick: () -> Unit,
-    onSearchClick: () -> Unit
+    onSearchClick: () -> Unit,
+    onFilterClick: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -87,7 +89,7 @@ fun HomeScreen(
                             .weight(1f),
                         drawable = R.drawable.ic_outline_filter_alt_24,
                         text = stringResource(R.string.filter),
-                        onClick = { /*TODO*/ }
+                        onClick = onFilterClick
                     )
 
                     DividerVertical()
@@ -111,6 +113,17 @@ fun HomeScreen(
                 }
 
                 Space(height = 8.dp)
+
+                if (list.isEmpty() && !loading) {
+                    Text(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        text = "Data Tidak Ditemukan",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Medium,
+                        textAlign = TextAlign.Center
+                    )
+                }
 
                 LazyColumn(
                     verticalArrangement = Arrangement
@@ -163,6 +176,7 @@ fun HomeScreenPreview() {
             )
         ),
         onSortClick = { },
-        onSearchClick = { }
+        onSearchClick = { },
+        onFilterClick = { }
     )
 }

@@ -1,7 +1,9 @@
 package com.buaja.home.di
 
 import com.buaja.home.data.repository.ListPriceRepositoryImpl
+import com.buaja.home.data.repository.OptionsAreaRepositoryImpl
 import com.buaja.home.domain.repository.ListPriceRepository
+import com.buaja.home.domain.repository.OptionsAreaRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -23,4 +25,10 @@ abstract class RepositoryModule {
     abstract fun bindsListPriceRepository(
         listPriceRepositoryImpl: ListPriceRepositoryImpl
     ): ListPriceRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindsOptionsAreaRepository(
+        optionsAreaRepositoryImpl: OptionsAreaRepositoryImpl
+    ): OptionsAreaRepository
 }
